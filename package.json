@@ -1,0 +1,26 @@
+{
+  "name": "window-objective",
+  "displayName": "Window Objective",
+  "description": "Adds a persistent objective textbox to the status bar.",
+  "version": "0.0.1",
+  "publisher": "vscode-extension-dev",
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "./node_modules/.bin/tsc -p ./",
+    "watch": "./node_modules/.bin/tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  }
+}

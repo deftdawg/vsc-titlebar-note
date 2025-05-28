@@ -33,8 +33,22 @@ To test this extension from its source code, follow these steps:
     ```
 
 4.  **Run the Extension in Development Mode**:
-    *   Press `F5` to open a new VS Code window (the "Extension Development Host") with the `window-objective` extension running.
-    *   This new window will have access to the extension as if it were installed.
+
+    There are two main ways to do this:
+
+    *   **Using the Command Line (Recommended for clarity)**:
+        *   Make sure the extension has been compiled (see step 2, `npm install` should have handled `tsc`). If you need to recompile, you can often run `npm run compile`.
+        *   In your terminal, from the root of the `window-objective` project, run the following command:
+            ```bash
+            code --extensionDevelopmentPath=\${PWD}
+            ```
+        *   This will open a new VS Code window (the "Extension Development Host") with the `window-objective` extension running.
+
+    *   **Using F5 (If launch.json is configured)**:
+        *   VS Code uses a `.vscode/launch.json` file to configure debugging and running tasks. If this project has a correctly configured `launch.json` for extension development (often created by default with `yo code`), pressing `F5` should automatically start the "Run Extension" task.
+        *   If F5 presents options for Python or Node without an "Extension Host" or "Run Extension" option, it means `launch.json` might be missing or not configured for extension development. In this case, please use the command-line method above.
+
+    This new window will have access to the extension as if it were installed.
 
 5.  **Perform Manual Tests**:
 
